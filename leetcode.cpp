@@ -1,0 +1,99 @@
+//
+//  leetcode.cpp
+//  DSA
+//
+//  Created by Shivakiran Ayyagari on 4/11/19.
+//  Copyright © 2019 Shivakiran Ayyagari. All rights reserved.
+//
+
+#include <stdio.h>
+#include <unordered_map>
+
+#include "leetcode.h"
+
+
+
+//two sum implementation
+std::vector<int> Arrays::TwoSum(std::vector<int> &nums, int target)
+{
+    std::vector<int> result;
+    std::unordered_map<int,int> hash_map;
+    
+    for(auto i=0;i<nums.size();i++)
+    {
+        int diff=target-nums[i];
+        if(hash_map.find(diff)!=hash_map.end())
+        {
+            result.push_back(i);
+            result.push_back(hash_map[diff]);
+            break;
+        }
+        hash_map[nums[i]]=i;
+    }
+    
+    return result;
+}
+
+//Reverse Integer Implementatin
+int Arrays::ReverseInteger(int num)
+{
+    if((num>=pow(2,31)-1) || (num<=-pow(2,31)))
+        return 0;
+    int sign=1;
+    if(num<0)
+    {
+        sign=-1;
+        num*=-1;
+    }
+    int rev=0;
+    while(num>0)
+    {
+        if(rev>(pow(2,31)-num%10)/10)
+            return 0;
+        rev=rev*10+num%10;
+        num=num/10;
+    }
+    return rev;
+}
+
+
+//Ispalindrome Implementation
+bool Arrays::IsPalindrome(int num)
+{
+    if(num<=0)
+        return false;
+    auto s=std::to_string(num);
+    for(int i=0;i<s.size()/2;i++)
+    {
+        if(s[i]!=s[s.size()-1-i])
+            return false;
+    }
+    return true;
+}
+
+
+//remove element Implementation
+std::vector<int> Arrays::RemoveElement(std::vector<int> &nums, int value)
+{
+    int pLength=0;
+    for(int i; i<nums.size(); i++)
+    {
+        if(nums[i]!=value)
+        {
+            nums[pLength]=nums[i];
+            pLength++;
+        }
+    }
+    
+    return nums;
+    
+}
+
+void Arrays::TestCasesTwoSum(std::vector<int> &nums)
+{
+    nums.push_back(2);
+    nums.push_back(4);
+    nums.push_back(7);
+    nums.push_back(11);
+}
+
