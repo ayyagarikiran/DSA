@@ -76,7 +76,7 @@ bool Arrays::IsPalindrome(int num)
 std::vector<int> Arrays::RemoveElement(std::vector<int> &nums, int value)
 {
     int pLength=0;
-    for(int i; i<nums.size(); i++)
+    for(int i; i < nums.size(); i++)
     {
         if(nums[i]!=value)
         {

@@ -17,6 +17,9 @@ public:
     Arrays()
     {
     }
+    
+    ~Arrays();
+    
 public:
     std::vector<int> TwoSum(std::vector<int> &nums, int target);
     int ReverseInteger(int num);

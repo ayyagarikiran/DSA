@@ -13,6 +13,7 @@
 #include "Sorting.h"
 
 Arrays *Array;
+InHouseSorting::sorting *sorts;
 
 int main(int argc, const char * argv[]) {
     // insert code here..
@@ -43,8 +44,8 @@ int main(int argc, const char * argv[]) {
     //-----------------------//
     
     //----Sorting an array------//
-    InHouseSorting::VectorForSorting(nums);
-    InHouseSorting::InsertionSort(nums);
+    sorts->VectorForSorting(nums);
+    sorts->InsertionSort(nums);
     
     for(auto &it:nums)
     {
