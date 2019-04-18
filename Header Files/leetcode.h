@@ -25,6 +25,9 @@ public:
     int ReverseInteger(int num);
     bool IsPalindrome(int num);
     std::vector<int> RemoveElement(std::vector<int> &nums, int value);
+    unsigned long searchInsert(std::vector<int> &nums, int target);
+    int lengthOfLastWord(std::string &S);
+    void plusOne(std::vector<int> &nums);
     
 public:
     //testcases

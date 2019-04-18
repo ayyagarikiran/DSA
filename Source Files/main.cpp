@@ -31,26 +31,43 @@ int main(int argc, const char * argv[]) {
     //---------------------//
     
     //----- Reverse Integer---//
-    int rev=Array->ReverseInteger(pow(2,31)-1);
+    int rev=Array->ReverseInteger(2341);
     std::cout<<"\n";
-    std::cout<<"Reverse Integer"<<std::endl;
-    std::cout<<rev<<std::endl;
+    std::cout<<"Reverse Integer "<<rev<<std::endl;
     //------------------------//
     
     //------IsPalindrome-----//
     bool palindrome=Array->IsPalindrome(2020201);
-    
+    std::cout<<"\n";
     std::cout<<"to check if the number is palindorme or not "<<palindrome<<std::endl;
     //-----------------------//
     
+    //-----Search Insert-----//
+    auto idx=Array->searchInsert(nums, 7);
+    std::cout<<"\n";
+    std::cout<<"The value is at idx  "<<idx<<std::endl;
+    
+    //----length of last word in the string--//
+    std::string S ="Hello World ";
+    auto cnt=Array->lengthOfLastWord(S);
+    std::cout<<"\n";
+    std::cout<<"length of last word is "<<cnt<<std::endl;
+    
     //----Sorting an array------//
     sorts->VectorForSorting(nums);
-    sorts->InsertionSort(nums);
     
+    //insertion sort
+    //sorts->InsertionSort(nums);
+    
+    //merge sort
+    
+    sorts->MergeSort(nums);
+    std::cout<<"\n";
     for(auto &it:nums)
     {
         std::cout<<it<<" ";
     }
     std::cout<<"\n";
+    
     return 0;
 }

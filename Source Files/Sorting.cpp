@@ -61,5 +61,41 @@ void InHouseSorting::sorting::pMergeSort(std::vector<int> &nums, unsigned long s
 }
 void InHouseSorting::sorting::pMerge(std::vector<int> &nums, unsigned long strIdx, unsigned long mid, unsigned long endIdx)
 {
+    int temp[endIdx-strIdx+1];
+    auto i=strIdx;
+    auto j=mid+1;
+    auto k=0;
     
+    while(i<=mid&&j<=endIdx)
+    {
+        if(nums[i]<=nums[j])
+        {
+            temp[k]=nums[i];
+            k++;
+            i++;
+        }
+        else
+        {
+            temp[k]=nums[j];
+            k++;
+            j++;
+        }
+    }
+    
+    // add elements left in the first interval
+    while(i <= mid) {
+        temp[k] = nums[i];
+        k += 1; i += 1;
+    }
+    
+    // add elements left in the second interval
+    while(j <= endIdx) {
+        temp[k] = nums[j];
+        k += 1; j += 1;
+    }
+    
+    // copy temp to original interval
+    for(auto i = strIdx; i <= endIdx; i += 1) {
+        nums[i] = temp[i - strIdx];
+    }
 }

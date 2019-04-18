@@ -89,6 +89,40 @@ std::vector<int> Arrays::RemoveElement(std::vector<int> &nums, int value)
     
 }
 
+unsigned long Arrays::searchInsert(std::vector<int> &nums, int target)
+{
+    auto ind=0;
+    while(ind<nums.size())
+    {
+        if(nums.at(ind)==target)
+            return ind;
+        if(nums.at(ind)>target)
+        {
+            if(ind!=0)
+                return ind;
+            else
+                return 0;
+        }
+        ind++;
+    }
+    return nums.size();
+}
+
+int Arrays::lengthOfLastWord(std::string &S)
+{
+    int cnt=0;
+    for(auto &s:S)
+    {
+        if(s!=' ')
+            cnt++;
+        else if(cnt==0)
+            continue;
+        else
+            break;
+    }
+    
+    return cnt;
+}
 void Arrays::TestCasesTwoSum(std::vector<int> &nums)
 {
     nums.push_back(2);
