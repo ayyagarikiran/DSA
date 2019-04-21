@@ -31,6 +31,9 @@ public:
     int singleNumber(std::vector<int> &nums);
     int majorityElement(std::vector<int> &nums);
     bool isAnagram(std::string &s, std::string &t);
+    bool powerOfTwo(int &number);
+    int numberOfOneBits(uint32_t &number);
+    bool powerOfThree(int &number);
 public:
     //testcases
     void TestCasesTwoSum(std::vector<int> &nums);

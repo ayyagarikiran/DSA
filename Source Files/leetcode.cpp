@@ -13,7 +13,6 @@
 #include "leetcode.h"
 
 
-
 //two sum implementation
 std::vector<int> Arrays::TwoSum(std::vector<int> &nums, int target)
 {
@@ -77,7 +76,7 @@ bool Arrays::IsPalindrome(int num)
 std::vector<int> Arrays::RemoveElement(std::vector<int> &nums, int value)
 {
     int pLength=0;
-    for(int i; i < nums.size(); i++)
+    for(int i=0;i < nums.size(); i++)
     {
         if(nums[i]!=value)
         {
@@ -193,6 +192,43 @@ bool Arrays::isAnagram(std::string &S, std::string &T)
         else if(it->second!=mapT[it->first])
             return false;
         
+    }
+    return true;
+}
+
+bool Arrays::powerOfTwo(int &number)
+{
+    if(number>pow(2,31)-1)
+        return false;
+    if(number<=0)
+        return false;
+    if((number&(number-1))!=0)
+        return false;
+    
+    return true;
+        
+}
+
+int Arrays::numberOfOneBits(uint32_t &number)
+{
+    int count=0;
+    while(number>static_cast<uint32_t>(0))
+    {
+        number=number&(number-1);
+        count++;
+    }
+    return count;
+}
+
+bool Arrays::powerOfThree(int &number)
+{
+    if(number<1)
+        return false;
+    while(number>1)
+    {
+        if(number%3!=0)
+            return false;
+        number/=3;
     }
     return true;
 }

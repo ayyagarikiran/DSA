@@ -24,14 +24,14 @@ namespace InHouseSorting
         ~sorting();
         
     public:
-        void InsertionSort(std::vector<int> &nums);
-        void MergeSort(std::vector<int> &nums);
+        static void InsertionSort(std::vector<int> &nums);
+        static void MergeSort(std::vector<int> &nums);
         
     public:
-        void VectorForSorting(std::vector<int> &nums);
+        static void VectorForSorting(std::vector<int> &nums);
     private:
-        void pMergeSort(std::vector<int> &nums,unsigned long strIdx, unsigned long endIdx);
-        void pMerge(std::vector<int> &nums,unsigned long strIdx,unsigned long mid,unsigned long endIdx);
+        static void pMergeSort(std::vector<int> &nums,unsigned long strIdx, unsigned long endIdx);
+        static void pMerge(std::vector<int> &nums,unsigned long strIdx,unsigned long mid,unsigned long endIdx);
 
     };
 }

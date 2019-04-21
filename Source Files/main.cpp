@@ -13,7 +13,6 @@
 #include "Sorting.h"
 
 Arrays *Array;
-InHouseSorting::sorting *sorts;
 
 int main(int argc, const char * argv[]) {
     // insert code here..
@@ -81,19 +80,40 @@ int main(int argc, const char * argv[]) {
     std::cout<<"\n";
     std::string s="anagram";
     std::string t="nagram";
-    bool Anagram;
+    bool Anagram=false;
     Anagram=Array->isAnagram(s, t);
     std::cout<<"is Anagram: "<<Anagram<<std::endl;
     
+    //----power of two---//
+    std::cout<<"\n";
+    bool powerOfTwo=false;
+    int numberPowerOfTwo=8;
+    powerOfTwo=Array->powerOfTwo(numberPowerOfTwo);
+    std::cout<<"Is Power of Two? "<<powerOfTwo<<std::endl;
+    
+    //----counting number of bits----//
+    std::cout<<"\n";
+    uint32_t numberCountingBits=static_cast<uint32_t>(00000000000000000000000000011011);
+    int numBit=Array->numberOfOneBits(numberCountingBits);
+    std::cout<<"No of One Bits: "<<numBit<<std::endl;
+    
+    //----power of threee------//
+    std::cout<<"\n";
+    int numberPowerOfThree=27;
+    bool isPowerOfThree=false;
+    isPowerOfThree=Array->powerOfThree(numberPowerOfThree);
+    std::cout<<"Is Power of three? "<<isPowerOfThree<<std::endl;
+    
+    
     //----Sorting an array------//
-    sorts->VectorForSorting(nums);
+    InHouseSorting::sorting::VectorForSorting(nums);
     
     //insertion sort
     //sorts->InsertionSort(nums);
     
     //merge sort
     
-    sorts->MergeSort(nums);
+    InHouseSorting::sorting::MergeSort(nums);
     std::cout<<"\n";
     for(auto &it:nums)
     {
