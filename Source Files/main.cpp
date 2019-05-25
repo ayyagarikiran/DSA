@@ -11,8 +11,10 @@
 
 #include "leetcode.h"
 #include "Sorting.h"
+#include "CTCI.h"
 
 Arrays *Array;
+CTCIArrayAndStrings *CTCIArraysAndString;
 
 int main(int argc, const char * argv[]) {
     // insert code here..
@@ -121,5 +123,50 @@ int main(int argc, const char * argv[]) {
     }
     std::cout<<"\n";
     
+    
+    //-----------------CTCI------------------------------------//
+    
+    //---Arrays And Strings-----------//
+    
+    //---IsUnique-----//
+    std::string isUniqueString="abccd";
+    bool isUnique=CTCIArraysAndString->isUnique(isUniqueString);
+    std::cout<<"\n";
+    std::cout<<"Is the string unique ";
+    std::cout<<isUnique<<std::endl;
+    
+    //--checkPermutation----//
+    
+    std::string checkPermuString1="dog";
+    std::string checkPermuString2="gdd";
+    bool checkPermutation=CTCIArraysAndString->checkPermutation(checkPermuString1, checkPermuString2);
+    std::cout<<"\n";
+    std::cout<<"Check Permuation ";
+    std::cout<<checkPermutation<<std::endl;
+    
+    //----URLIFY---------//
+    
+    //---PalindromePermutation------//
+    std::string palPermString="Tact Coa";
+    bool isPalPerm=CTCIArraysAndString->palindromePermutation(palPermString);
+    std::cout<<"\n";
+    std::cout<<"Palindrome Permutation ";
+    std::cout<<isPalPerm<<std::endl;
+    
+    //----OneEditDistance--------//
+    std::string oneEditString1="pale";
+    std::string oneEditString2="ple";
+    bool isOneEditDistance=CTCIArraysAndString->oneAway(oneEditString1,oneEditString2);
+    std::cout<<"\n";
+    std::cout<<"One Away ";
+    std::cout<<isOneEditDistance<<std::endl;
+    
+    //------String Compression--------/
+    std::string stringCompString="aabcccccaaa";
+    std::string compString;
+    compString=CTCIArraysAndString->stringCompression(stringCompString);
+    std::cout<<compString<<std::endl;
     return 0;
 }
+
+
