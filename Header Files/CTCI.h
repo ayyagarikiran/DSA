@@ -28,6 +28,7 @@ public:
     bool oneAway(string_t &s,string_t &t);
     string_t stringCompression(string_t &s);
     void rotateMatrix();
+    void ZeroMatrix();
     bool stringRotation(string_t &s, string_t &t);
 private:
     bool oneEditReplace(string_t &s, string_t &t);

@@ -140,6 +140,53 @@ void CTCIArrayAndStrings::rotateMatrix()
 	}
 	
 }
+
+void CTCIArrayAndStrings::ZeroMatrix()
+{
+	int mat[4][4] =
+	{
+		{1, 2, 4, 4},
+		{5, 6, 7, 8},
+		{9, 10, 11, 0},
+		{13, 14, 15, 16}
+	};
+	std::vector<int> row,col;
+	
+	for(int i=0;i<4;i++)
+	{
+		for(int j=0;j<4;j++)
+		{
+			if(mat[i][j]==0)
+			{
+				row.push_back(i);
+				col.push_back(j);
+			}
+		}
+	}
+	
+	for(int i =0;i<row.size();i++)
+	{
+		for(int j=0;j<4;j++)
+			mat[row[i]][j]=0;
+	}
+	
+	for(int i =0;i<col.size();i++)
+	{
+		for(int j=0;j<4;j++)
+			mat[j][col[i]]=0;
+	}
+	
+	for(int i=0;i<4;i++)
+	{
+		for(int j=0;j<4;j++)
+		{
+			std::cout<<mat[i][j]<<" ";
+		}
+		std::cout<<"\n";
+	}
+	
+}
+
 bool CTCIArrayAndStrings::palindromePermutation(string_t &str)
 {
 	std::unordered_map<char,int> palPerm;

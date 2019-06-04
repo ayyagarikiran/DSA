@@ -181,6 +181,11 @@ int main(int argc, const char * argv[]) {
     CTCIArraysAndString->rotateMatrix();
     std::cout<<"\n";
     
+    //----Zero Matrix---------//
+    std::cout<<"Zero Matrix "<<std::endl;
+    CTCIArraysAndString->ZeroMatrix();
+    std::cout<<"\n";
+    
     //------String Rotation--------//
     
     std::string stringRotationString1="waterbottle";
