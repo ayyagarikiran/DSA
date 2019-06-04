@@ -25,8 +25,26 @@ public:
     bool palindromePermutation(string_t &s);
     bool oneAway(string_t &s,string_t &t);
     string_t stringCompression(string_t &s);
+    bool stringRotation(string_t &s, string_t &t);
 private:
     bool oneEditReplace(string_t &s, string_t &t);
 };
+
+class CTCILinkedLists
+{
+public:
+    CTCILinkedLists(){}
+    ~CTCILinkedLists();
+public:
+    void removeDuplicates();
+    int kthToLast(int &num);
+    void deleteMiddleElement();
+    void partition(int x);
+    void addTwoLinkedLists();
+    bool Palindrome();
+    
+};
+
+
 
 #endif /* CTCI_h */

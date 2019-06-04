@@ -15,6 +15,7 @@
 
 Arrays *Array;
 CTCIArrayAndStrings *CTCIArraysAndString;
+CTCILinkedLists *CTCILinkedList;
 
 int main(int argc, const char * argv[]) {
     // insert code here..
@@ -161,11 +162,59 @@ int main(int argc, const char * argv[]) {
     std::cout<<"One Away ";
     std::cout<<isOneEditDistance<<std::endl;
     
-    //------String Compression--------/
+    //------String Compression--------//
     std::string stringCompString="aabcccccaaa";
     std::string compString;
+    std::cout<<"\n";
+    std::cout<<"Compressed String or Uncompressed String ";
     compString=CTCIArraysAndString->stringCompression(stringCompString);
     std::cout<<compString<<std::endl;
+    
+    //------String Rotation--------//
+    
+    std::string stringRotationString1="waterbottle";
+    std::string stringRotationString2="erbottlewat";
+    std::cout<<"\n";
+    std::cout<<"Is String Rotated ";
+    bool isStringRotated=CTCIArraysAndString->stringRotation(stringRotationString1,stringRotationString2);
+    std::cout<<isStringRotated<<std::endl;
+    
+    
+    //----------LinkedList---------------//
+    
+    //---Remove Duplicates--------//
+    std::cout<<"Remove Duplicates in LinkedLists"<<std::endl;
+    CTCILinkedList->removeDuplicates();
+    std::cout<<"\n";
+    
+    //-----Return Kth to the last-------//
+    std::cout<<"Return Kth to Last ";
+    int kthNumber=3;
+    int kthNumberData=CTCILinkedList->kthToLast(kthNumber);
+    std::cout<<kthNumberData<<std::endl;
+    std::cout<<"\n";
+    
+    //-----Delete Middle Element------//
+    std::cout<<"Delete Middle Element"<<std::endl;
+    CTCILinkedList->deleteMiddleElement();
+    std::cout<<"\n";
+    
+    //-----partition elements in LinkedList----//
+    std::cout<<"Partition elements in LinkedList"<<std::endl;
+    CTCILinkedList->partition(13);
+    std::cout<<"\n";
+    
+    //-----add two linkedLists----//
+    std::cout<<"add two linkedLists"<<std::endl;
+    CTCILinkedList->addTwoLinkedLists();
+    std::cout<<"\n";
+    
+    //---palindrome LinkedLists---//
+    std::cout<<"Palindrome Linked List ";
+    bool isCTCIPalindrome=CTCILinkedList->Palindrome();
+    std::cout<<isCTCIPalindrome<<std::endl;
+    std::cout<<"\n";
+    
     return 0;
 }
 
