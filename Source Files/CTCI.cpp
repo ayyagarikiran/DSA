@@ -70,9 +70,76 @@ bool CTCIArrayAndStrings::checkPermutation(string_t &string1, string_t &string2)
 
 void CTCIArrayAndStrings::URLify(string_t &str,int length)
 {
+	int nSpaces=0;
+	for(int i =0;i<length;i++)
+	{
+		if(str[i]==' ')
+			nSpaces++;
+	}
+	int totLength=length-nSpaces+nSpaces*3;
+	
+	while(totLength>0)
+	{
+		if(str[length-1]!=' ')
+		{
+			str[totLength-1]=str[length-1];
+			totLength--;
+			length--;
+		}
+		else
+		{
+			str[totLength-1]='0';
+			str[totLength-2]='2';
+			str[totLength-3]='%';
+			totLength-=3;
+			length--;
+		}
+	}
+}
+void CTCIArrayAndStrings::rotateMatrix()
+{
+	int mat[4][4] =
+	{
+		{1, 2, 3, 4},
+		{5, 6, 7, 8},
+		{9, 10, 11, 12},
+		{13, 14, 15, 16}
+	};
+	int N=4;
+	for (int x = 0; x < N / 2; x++)
+	{
+		// Consider elements in group of 4 in
+		// current square
+		for (int y = x; y < N-x-1; y++)
+		{
+			// store current cell in temp variable
+			int temp = mat[x][y];
+			
+			// move values from right to top
+			mat[x][y] = mat[y][N-1-x];
+			
+			// move values from bottom to right
+			mat[y][N-1-x] = mat[N-1-x][N-1-y];
+			
+			// move values from left to bottom
+			mat[N-1-x][N-1-y] = mat[N-1-y][x];
+			
+			// assign temp to left
+			mat[N-1-y][x] = temp;
+		}
+	}
+	
+	for(int i =0;i<N;i++)
+	{
+		for(int j=0;j<N;j++)
+		{
+			std::cout<<mat[i][j]<<" ";
+		}
+		std::cout<<"\n";
+		
+	}
 	
 }
-
 bool CTCIArrayAndStrings::palindromePermutation(string_t &str)
 {
 	std::unordered_map<char,int> palPerm;

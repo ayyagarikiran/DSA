@@ -146,6 +146,11 @@ int main(int argc, const char * argv[]) {
     std::cout<<checkPermutation<<std::endl;
     
     //----URLIFY---------//
+    std::string uRLifyString="MR John Smith    ";
+    CTCIArraysAndString->URLify(uRLifyString, 13);
+    std::cout<<"\n";
+    std::cout<<"URLIFY "<<uRLifyString<<std::endl;
+    
     
     //---PalindromePermutation------//
     std::string palPermString="Tact Coa";
@@ -169,6 +174,12 @@ int main(int argc, const char * argv[]) {
     std::cout<<"Compressed String or Uncompressed String ";
     compString=CTCIArraysAndString->stringCompression(stringCompString);
     std::cout<<compString<<std::endl;
+    std::cout<<"\n";
+    
+    //-----Rotate Matrix-----------//
+    std::cout<<"Rotate Matrix by 90"<<std::endl;
+    CTCIArraysAndString->rotateMatrix();
+    std::cout<<"\n";
     
     //------String Rotation--------//
     

@@ -11,6 +11,8 @@
 #include <vector>
 #include <string>
 
+#define matSize 4;
+
 typedef std::string string_t;
 
 class CTCIArrayAndStrings
@@ -25,6 +27,7 @@ public:
     bool palindromePermutation(string_t &s);
     bool oneAway(string_t &s,string_t &t);
     string_t stringCompression(string_t &s);
+    void rotateMatrix();
     bool stringRotation(string_t &s, string_t &t);
 private:
     bool oneEditReplace(string_t &s, string_t &t);
