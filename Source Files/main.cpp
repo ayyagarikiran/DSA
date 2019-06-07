@@ -12,6 +12,7 @@
 #include "leetcode.h"
 #include "Sorting.h"
 #include "CTCI.h"
+#include "CTCILinkedLists.h"
 
 Arrays *Array;
 CTCIArrayAndStrings *CTCIArraysAndString;
